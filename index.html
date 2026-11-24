@@ -140,14 +140,14 @@ function answered(){return G.filter(Boolean).length}
 function head(){$("#sc").textContent=`Marcador: ${score()} / ${answered()} · ${answered()}/100`;$("#pg").style.width=answered()+"%"}
 function start(){app.innerHTML=`<div class="card"><h2>Examen interactivo · 100 preguntas</h2><p>Metodología de Diseño y Gestión de Proyectos (Temas 1–6). Opción múltiple y Verdadero/Falso, con retroalimentación inmediata y reporte final. Elige cómo responder:</p><div class="row"><button class="btn mode" onclick="go(1)">De 1 en 1</button><button class="btn mode" onclick="go(5)">Bloques de 5</button><button class="btn mode" onclick="go(10)">Bloques de 10</button></div><p style="color:var(--mu);font-size:.85rem">Distribución: T1 12 · T2 20 · T3 16 · T4 20 · T5 20 · T6 12. Puedes terminar antes con «Finalizar examen».</p></div>`;head()}
 function go(n){N=n;pos=0;A=[];G=[];done=false;show()}
-function show(){head();const end=Math.min(pos+N,100);let h="";
+function show(keep){head();const end=Math.min(pos+N,100);let h="";
 for(let i=pos;i<end;i++){const q=Q[i],g=G[i];h+=`<div class="card"><span class="tag">Pregunta ${i+1}/100</span><span class="tag">${TN[q.t]}</span><span class="tag">${q.vf?"Verdadero / Falso":"Opción múltiple"}</span><div class="q">${q.q}</div>`;
 q.o.forEach((o,k)=>{let c="opt";if(g){if(k===q.r)c+=" good";else if(k===A[i])c+=" bad"}else if(A[i]===k)c+=" sel";h+=`<button class="${c}" ${g?"disabled":""} onclick="pick(${i},${k})">${q.vf?"":L[k]+". "}${o}</button>`});
 if(g){const ok=A[i]===q.r;h+=`<div class="fb ${ok?"good":"bad"}"><b>${ok?"✅ ¡Correcto!":"❌ Incorrecto."}</b> Respuesta correcta: <b>${q.vf?q.o[q.r]:L[q.r]+". "+q.o[q.r]}</b><br>${q.e}</div>`}h+="</div>"}
-const all=[...Array(end-pos)].every((_,k)=>A[pos+k]!==undefined),graded=G[pos];
-h+=`<div class="row">${graded?(end<100?`<button class="btn" onclick="nxt()">Siguiente ▶</button>`:`<button class="btn" onclick="fin()">Ver reporte final 🏁</button>`):`<button class="btn" ${all?"":"disabled"} onclick="grade()">${N==1?"Responder":"Calificar bloque"}</button>`}<button class="btn red sec" onclick="if(confirm('¿Finalizar el examen ahora?'))fin()">FINALIZAR EXAMEN</button></div>`;
-app.innerHTML=h;window.scrollTo(0,0)}
-function pick(i,k){if(G[i])return;A[i]=k;show()}
+const graded=[...Array(end-pos)].every((_,k)=>G[pos+k]);
+h+=`<div class="row">${graded?(end<100?`<button class="btn" onclick="nxt()">Siguiente ▶</button>`:`<button class="btn" onclick="fin()">Ver reporte final 🏁</button>`):""}<button class="btn red sec" onclick="if(confirm('¿Finalizar el examen ahora?'))fin()">FINALIZAR EXAMEN</button></div>`;
+app.innerHTML=h;if(!keep)window.scrollTo(0,0)}
+function pick(i,k){if(G[i])return;A[i]=k;G[i]=1;show(1)}
 function grade(){for(let i=pos;i<Math.min(pos+N,100);i++)G[i]=1;show()}
 function nxt(){pos+=N;show()}
 function fin(){head();const n=answered(),s=score(),pc=n?(s/n*100):0,t={};
