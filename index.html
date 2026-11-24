@@ -1,128 +1,161 @@
 <!DOCTYPE html>
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Guía de Estudio · Metodología de Diseño y Gestión de Proyectos</title>
+<title>Examen Interactivo · Gestión de Proyectos</title>
 <style>
-:root{--bg:#f6f8fb;--card:#fff;--tx:#1b2430;--mu:#5b6675;--ac:#0a8fd0;--ac2:#e6f4fb;--wa:#fff4d6;--wb:#d9a400;--bd:#dde3ea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#10151c;--card:#18202a;--tx:#e8edf3;--mu:#9aa6b5;--ac:#4cb8ee;--ac2:#152b3a;--wa:#33290f;--wb:#e0b72e;--bd:#2a3542;color-scheme:dark}}
-:root[data-theme=dark]{--bg:#10151c;--card:#18202a;--tx:#e8edf3;--mu:#9aa6b5;--ac:#4cb8ee;--ac2:#152b3a;--wa:#33290f;--wb:#e0b72e;--bd:#2a3542;color-scheme:dark}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-header{background:linear-gradient(135deg,#0a8fd0,#0a5f94);color:#fff;padding:28px 20px 22px;text-align:center}
-header h1{margin:0 0 6px;font-size:1.5rem}header p{margin:0;opacity:.9;font-size:.95rem}
-nav{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--bd);display:flex;gap:6px;overflow-x:auto;padding:8px 12px}
-nav a{white-space:nowrap;text-decoration:none;color:var(--ac);border:1px solid var(--bd);border-radius:20px;padding:4px 12px;font-size:.85rem}
-nav a:hover{background:var(--ac2)}
-main{max-width:860px;margin:0 auto;padding:18px 14px 60px}
-section{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px 20px;margin:18px 0}
-h2{margin:0 0 4px;color:var(--ac);font-size:1.3rem}.sub{color:var(--mu);font-size:.85rem;margin:0 0 10px}
-h3{margin:16px 0 6px;font-size:1rem}ul{margin:6px 0;padding-left:20px}li{margin:3px 0}
-.key{background:var(--wa);border-left:4px solid var(--wb);border-radius:8px;padding:10px 14px;margin:14px 0}
-.key h3{margin:0 0 4px}
-.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.88rem;margin:8px 0}
-th,td{border:1px solid var(--bd);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--ac2)}
-details{background:var(--ac2);border-radius:8px;padding:8px 12px;margin-top:12px}
-summary{cursor:pointer;font-weight:600;color:var(--ac)}details p{margin:8px 0 2px}
-.map{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:8px}
-.map a{display:block;text-decoration:none;color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;background:var(--card)}
-.map a:hover{border-color:var(--ac)}.map b{color:var(--ac)}
-footer{text-align:center;color:var(--mu);font-size:.85rem;padding:10px 14px 30px}
+:root{--bg:#f6f8fb;--card:#fff;--tx:#1b2430;--mu:#5b6675;--ac:#0a8fd0;--ac2:#e6f4fb;--ok:#18864b;--okb:#e3f6ea;--ko:#c0392b;--kob:#fde8e6;--bd:#dde3ea;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#10151c;--card:#18202a;--tx:#e8edf3;--mu:#9aa6b5;--ac:#4cb8ee;--ac2:#152b3a;--ok:#4cc585;--okb:#12301f;--ko:#ff7d6e;--kob:#3a1b18;--bd:#2a3542;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#10151c;--card:#18202a;--tx:#e8edf3;--mu:#9aa6b5;--ac:#4cb8ee;--ac2:#152b3a;--ok:#4cc585;--okb:#12301f;--ko:#ff7d6e;--kob:#3a1b18;--bd:#2a3542;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{position:sticky;top:0;z-index:5;background:linear-gradient(135deg,#0a8fd0,#0a5f94);color:#fff;padding:10px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+header b{font-size:1.05rem}.sc{font-variant-numeric:tabular-nums;font-size:.9rem}
+.bar{height:5px;background:rgba(255,255,255,.3)}.bar i{display:block;height:100%;width:0;background:#fff;transition:width .3s}
+main{max-width:780px;margin:0 auto;padding:16px 14px 60px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:16px 18px;margin:14px 0}
+.tag{display:inline-block;font-size:.75rem;background:var(--ac2);color:var(--ac);border-radius:12px;padding:2px 10px;margin-right:6px}
+.q{font-weight:600;margin:8px 0}
+button{font:inherit;cursor:pointer}
+.opt{display:block;width:100%;text-align:left;background:var(--card);color:var(--tx);border:1px solid var(--bd);border-radius:10px;padding:9px 12px;margin:6px 0}
+.opt:hover:not(:disabled){border-color:var(--ac)}.opt.sel{border-color:var(--ac);background:var(--ac2)}
+.opt.good{border-color:var(--ok);background:var(--okb)}.opt.bad{border-color:var(--ko);background:var(--kob)}
+.btn{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:10px 18px;margin:6px 6px 0 0}.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.sec{background:transparent;color:var(--ac);border:1px solid var(--ac)}.btn.red{background:var(--ko)}
+.fb{border-radius:10px;padding:10px 12px;margin-top:8px;font-size:.93rem}.fb.good{background:var(--okb)}.fb.bad{background:var(--kob)}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.mode{flex:1;min-width:150px;text-align:center}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:.82rem}th,td{border:1px solid var(--bd);padding:5px 7px;text-align:left;vertical-align:top}th{background:var(--ac2)}
+.pb{background:var(--ac2);border-radius:8px;height:12px;overflow:hidden;margin:3px 0 10px}.pb i{display:block;height:100%;background:var(--ac)}
+.big{font-size:2.4rem;font-weight:700;color:var(--ac)}
 </style></head><body>
-<header><h1>📘 Guía de Estudio Interactiva</h1><p>Metodología de Diseño y Gestión de Proyectos · Temas 1 a 6 · Fase 1</p></header>
-<nav id="nav"></nav>
-<main>
-<section id="mapa"><h2>🗺️ Mapa temático</h2><p class="sub">Toca un tema para ir directo a su resumen.</p><div class="map" id="map"></div></section>
-<div id="temas"></div>
-</main>
-<footer>Contenido basado exclusivamente en los PDF del temario (UNIR). Los mini-retos ocultan la respuesta: toca para revelarla.</footer>
+<header><b>📝 Examen Interactivo · Gestión de Proyectos</b><span class="sc" id="sc"></span></header><div class="bar"><i id="pg"></i></div>
+<main id="app"></main>
 <script>
-const T=[
-{n:1,t:"Introducción al diseño y gestión de proyectos",
-sum:[
-"<b>Proyecto</b>: secuencia bien definida de eventos con principio y fin, objetivo claro, realizada por personas dentro de parámetros de tiempo, coste, recursos y calidad. Es una «empresa» temporal para crear un producto o servicio <b>único</b>.",
-"<b>Características</b>: <b>temporal</b> (termina al lograr objetivos, al ser inalcanzables o al dejar de ser necesario; el resultado no tiene por qué ser temporal, ej. pirámides), <b>único</b> (aunque haya elementos repetitivos) y <b>gradual</b> (alcance se refina; admite ciclos espiral o iterativo).",
-"<b>Proyecto tecnológico</b>: secuencia de etapas para crear/modificar un producto u organizar un proceso o servicio, como respuesta tecnológica a una necesidad. Su activo más valioso es el <b>elemento humano</b>, por lo que el director también necesita habilidades de RR. HH.",
-"<b>Dirigir un proyecto</b>: planificar, organizar, asignar recursos, monitorizar, controlar y liderar. Equilibra alcance, tiempo y coste (<b>triángulo</b> con la calidad en el centro); cada lado no cambia sin alterar los otros dos. Se evalúa con <b>idoneidad, eficiencia y eficacia</b>. Todo proyecto TIENE que tener director.",
-"<b>Fases</b> (desde la dirección): <b>preparación</b> (diseño y planificación, reunión de lanzamiento), <b>gestión</b> (seguimiento y control: comparar dónde estamos vs dónde debemos estar y corregir) y <b>terminación</b> (cerrar la cuenta, transmitir conocimiento, salida ordenada del equipo).",
-"<b>Necesidad de planificar</b>: pasar del «arte» a la «ingeniería» para minimizar (no evitar) errores. El problema nace a mediados de los 60 (ordenadores de 3.ª generación). Principio <b>KISS</b> (Kelly Johnson, Lockheed); leyes de Murphy; Tony Hoare (Turing 1980).",
-"<b>Historia</b>: Gizeh 2570 a. C.; Gantt 1910; CPM 1957; PERT 1958 (misiles Polaris); PMI 1969; Earned Value 1970; Brooks «mes-hombre» 1975; COCOMO (años 80); Scrum 1986; Calidad Total en los 90.",
-"<b>El reto</b>: territorio desconocido, expectativas, comunicación y equilibrio entre exigencias (<b>triple restricción</b>). Genera conflicto con los directores funcionales (doble dependencia) y exige <b>cambio cultural</b>.",
-"<b>Tres niveles</b>: planificación estratégica (horizonte lejano, metas globales, alta dirección), <b>dirección de proyectos</b> (plazo medio, metas parciales, órganos directivos) y control de calidad (futuro inmediato, tareas concretas, personal técnico)."],
-tabla:"<div class='tw'><table><tr><th></th><th>Proyectos</th><th>Operaciones</th></tr><tr><td>Objeto</td><td>Alcanzar objetivos y completarlos</td><td>Mantener la organización</td></tr><tr><td>Tiempo</td><td>Temporales, con inicio y fin</td><td>Continuas</td></tr><tr><td>Resultados</td><td>Producto/servicio único</td><td>No único</td></tr><tr><td>Gente</td><td>Equipos temporales y dinámicos</td><td>Equipos funcionales</td></tr></table></div>",
-key:["Triángulo: alcance, tiempo, coste (+calidad); indicadores: idoneidad, eficiencia, eficacia.","El director de proyectos está en el nivel intermedio (gestión de proyectos).","Fases: preparación → gestión → terminación.","Del arte a la ingeniería: minimizar, no evitar, los errores."],
-q:"¿Por qué no se puede reducir el coste sin tocar otro lado del triángulo?",a:"Porque cada lado es una restricción que no puede cambiarse sin alterar los otros dos: reducir coste implica reducir alcance, o no se puede aumentar el alcance sin aumentar coste o plazo."},
-{n:2,t:"Metodologías y estándares de diseño y gestión",
-sum:[
-"<b>Metodología</b>: conjunto de procedimientos basados en principios lógicos; define <b>qué</b> hacer. <b>Estándar</b>: modelo o especificación que define <b>cómo</b> hacerlo y suele ser parte de una metodología. No existe una metodología única: se adapta con enfoque <i>pick-and-choose</i>.",
-"Hay que distinguir la gestión del proyecto del desarrollo del producto. Ejemplos de metodologías completas: MÉTRICA (España), MERISE (Francia), PRINCE2 (Reino Unido). Fases mínimas comunes: conceptualización/preparación, desarrollo/seguimiento y control, cierre.",
-"<b>Pesadas/tradicionales</b> (cascada, predictivas, burocráticas): útiles en proyectos muy complejos o con equipos de más de 10–20 personas en varias ubicaciones. <b>Ligeras/ágiles</b>: funcionan bien con el cambio, orientadas a personas, poca documentación, «metodologías de aprendizaje» por iteración; se basan en el Manifiesto Ágil.",
-"<b>PMI</b> fundado en 1969; certificación PMP desde 1987. <b>PMBOK</b>: 1.ª ed. 1996; 2.ª ed. 2000 = estándar ANSI (único en gestión de proyectos) e IEEE Std 1490-2003. Es una guía de <b>buenas prácticas</b>, no una norma: el equipo decide qué es apropiado. Clave: identificar, generalmente reconocido, buenas prácticas.",
-"<b>Ediciones</b>: 5.ª (2013) 47 procesos, 5 grupos, 10 áreas (nueva: Interesados). 6.ª (2017): nuevos procesos (gestionar el conocimiento, implementar respuestas a riesgos, controlar recursos); tiempo→calendario, RR. HH.→recursos. 7.ª (2021): basada en <b>principios</b>, enfoque adaptativo, sistema de entrega de <b>valor</b>, 8 dominios de desempeño y plataforma PMIstandards+.",
-"<b>12 principios</b>: administrador diligente; entorno colaborativo; involucrar a interesados; enfocarse en valor; interacciones del sistema; liderazgo; adaptar según contexto; calidad en procesos y entregables; navegar la complejidad; optimizar respuestas a riesgos; adaptabilidad y resiliencia; permitir el cambio.",
-"<b>8 dominios de desempeño</b>: interesados, equipo, enfoque de desarrollo y ciclo de vida, planificación, trabajo del proyecto, entrega, métricas, incertidumbre (simultáneos, interdependientes).",
-"<b>10 áreas de conocimiento (6.ª ed.)</b>: integración, alcance, programación, costes, calidad, recursos, comunicaciones, riesgos, adquisiciones, interesados. <b>5 grupos de procesos</b>: iniciación, planificación, ejecución, seguimiento y control, cierre (se solapan).",
-"<b>Intervinientes</b>: stakeholders; <b>cliente</b> (aporta la financiación) vs <b>usuario</b> (usa los resultados); organización responsable; project manager; equipo de gestión y equipo del proyecto. Influyen la madurez, cultura, estilo de dirección y estructura de la organización. Ciclos de vida: cascada, espiral, entrega evolutiva, prototipado incremental.",
-"<b>Scrum</b>: proceso empírico, iterativo e incremental. Origen: artículo de 1986 (Takeuchi y Nonaka); formalizado en 1995 por Schwaber y Sutherland. Roles: <b>Product Owner, Scrum Master, Scrum Team, Cliente</b>. <b>Sprint</b> de 2–4 semanas (recomendado un mes); <b>product backlog</b> y <b>sprint backlog</b>; <b>daily</b> de máx. 15 min; <b>sprint review</b> al final. Ventajas: fácil, mucho feedback; inconvenientes: tareas mal definidas, exige equipos comprometidos."],
-key:["Metodología = qué hacer; estándar = cómo hacerlo.","PMBOK: estándar ANSI (2.ª ed.) y IEEE 1490-2003; buenas prácticas, no norma.","PMBOK 7: principios (12) + dominios (8); PMBOK 6: áreas (10) + procesos.","Sprint 2–4 semanas; daily ≤ 15 min."],
-q:"¿Qué cambia entre la 6.ª y la 7.ª edición del PMBOK en el enfoque?",a:"La 6.ª se basa en áreas de conocimiento y procesos; la 7.ª pasa a un estándar basado en principios y dominios de desempeño, con visión de entrega de valor y enfoque adaptativo."},
-{n:3,t:"Diseño del proyecto",
-sum:[
-"La <b>preparación</b> tiene dos subfases: <b>diseño</b> (definir el problema/producto) y <b>planificación</b> (plan de desarrollo). «Fallar en la planificación es planificar el fallo».",
-"El origen del proyecto es difuso y está fuera de su ámbito de control; la necesidad se percibe como <b>problema u oportunidad</b>. La definición del problema ocupa poco tiempo pero es la base de todo y debe ser revisada por todos los implicados. Un comité autoriza según alineación con el plan estratégico, resultado alcanzable en plazo razonable y consideración estratégica (mercado, organización, cliente, avance tecnológico, requisito legal).",
-"El análisis puede concluir que no hay necesidad real, que el retorno es insuficiente o que es más viable comprar. Modalidades: <b>subcontratado</b> (existe <b>fase contractual</b>: solicitar, valorar y elegir ofertas) o <b>in house</b> (subcontratación interna).",
-"<b>Evitar</b>: «soluciones en busca de un problema» y que los únicos interesados sean los propios implicados del proyecto.",
-"<b>Qué definir</b>: <b>objetivos</b> (win conditions; justificación de negocio tangible, ej. ROI, e intangible; análisis de viabilidad), <b>fines</b> (criterios de éxito, máx. ~6, regla <b>SMART</b>), <b>ámbito</b> (límites y entregables; línea base) y <b>requisitos</b> (nunca se dedica demasiado tiempo; incluyen ámbito, funciones, dimensiones, usuarios y restricciones).",
-"<b>Gold plating</b>: entregar más funcionalidades de las requeridas (no figura en el PMBOK). <b>Scope creeping</b>: el alcance crece con pequeños cambios por falta de control de cambios, requisitos pobres o jefe débil. Ayuda escribir lo que NO es el proyecto.",
-"<b>Planificación</b>: concreta los tres cimientos alcance (especificaciones), coste (presupuesto) y duración (calendario); es top-down y su salida es el <b>Plan de Gestión del Proyecto (PGP)</b>, cuya aprobación cierra el diseño e inicia el desarrollo. Empieza con la apertura del código del proyecto.",
-"<b>Organización y planificación (9 tareas)</b>: modelo de seguimiento; equipos y configuración organizativa (matriz de responsabilidades); planificación detallada y presupuesto; metodología, procedimientos y estándares; riesgos y expectativas; plan de transferencia; plan de calidad; formación del equipo; elaboración del PGP (junto con el PAC).",
-"<b>Kick-off</b>: reunión de lanzamiento que aprueba objetivos y alcance del PGP y oficializa la fase de desarrollo. Convoca a usuarios clave, responsables de equipos, proveedores, dirección y comités. El gestor prepara la presentación, la logística y el acta post-reunión."],
-key:["SMART: Specific, Measurable, Achievable, Realistic, Time-bound.","Gold plating ≠ scope creeping.","Salida de la planificación = PGP; su aprobación marca el inicio del desarrollo.","Fase contractual solo si se subcontrata."],
-q:"¿Qué diferencia hay entre gold plating y scope creeping?",a:"Gold plating: el equipo añade por su cuenta más funcionalidades de las requeridas. Scope creeping: el alcance cambia lentamente por peticiones aparentemente pequeñas sin control de cambios."},
-{n:4,t:"Planificación del proyecto tecnológico",
-sum:[
-"<b>Términos</b>: planificación (subfase de la preparación), <b>PGP</b> (documento que recoge sus resultados; «la Biblia del proyecto»), organización y planificación, y <b>programa de trabajo</b> (calendario que enlaza tareas con recursos y permite estimar costes).",
-"<b>Entradas del plan</b>: documento de requisitos del usuario, normativa, metodologías/estándares, experiencia previa, lista de recursos, costes unitarios, riesgos, factores ambientales y restricciones externas.",
-"<b>Secuencia de 9 pasos</b>: definir productos y actividades; estructurar en tareas (EDT); buscar dependencias; estimar recursos, esfuerzo y duración; definir la red de actividades; establecer la programación; asignar recursos; estimar costes; revisión y análisis crítico (iterativo).",
-"<b>Dependencias</b>: Fin-Inicio (FI), Inicio-Inicio (II), Inicio-Fin (IF), Fin-Fin (FF), con retardos positivos o negativos. <b>D = E / R</b> (duración = esfuerzo / recursos). Duración ≠ tiempo de calendario. Riesgos de sobreasignación: Ley de Parkinson y «nueve mujeres no tienen un bebé en un mes» (Brooks).",
-"<b>Revisión</b>: conflictos de programación, de recurso y de plazos con terceros. Si no se llega a la fecha: análisis <b>estratégico</b> (cambiar la red) o <b>táctico</b> (más recursos para cambiar tiempos).",
-"<b>Salidas</b>: EDT y descripción, entregables, organización (roles), secuencia, cronograma, tiempo total, recursos y coste total. Se definen 8 <b>procedimientos</b> (edición y nomenclatura de documentos, distribución, reuniones, revisión y aprobación, control de cambios, control de avance, informes de progreso), propuestos por el gestor y aprobados por el Comité de Dirección.",
-"<b>PGP</b>: lo elabora el gestor (con aportes de todos); define funciones, actividades y tareas, integra objetivos, metodología, plan de trabajo, RR. HH., riesgos y responsabilidades; es línea base para medir el avance. Estructura según IEEE o ESA.",
-"<b>EDT/WBS</b>: descomposición jerárquica orientada a entregables, de lo general a lo particular; hasta 6 niveles, ideal 3–4 de profundidad y 5–9 elementos por nivel, máx. 100–200 terminales; codificación jerárquica (1, 1.1…). <b>Hito</b>: actividad de duración cero (rombo/triángulo). Reglas de Yourdon (unidades de ~1 semana).",
-"<b>Diagramas de red</b> (años 50, Defensa EE. UU.): <b>DAL</b> (actividad en línea: flechas), <b>DAN</b> (actividad en nodos), <b>DP</b> (precedencia, con esperas o desfases). No están a escala temporal. <b>Gantt</b> (Henry Gantt, ~1900): barras proporcionales al calendario; no muestra explícitamente dependencias.",
-"<b>CPM</b> (Walker, DuPont, y Kelley, Remington Rand; 1956–58): camino crítico = el más largo de la red, holgura mínima; un retraso en él retrasa el proyecto. <b>PERT</b>: duraciones probabilísticas (CPM: deterministas). Fct = mayor fin de las precedentes; Fft = Fct + dE; FCT = FFT − dE; <b>holgura total</b> H = FFT − Fft; holgura libre ≤ holgura total. CPM asume recursos ilimitados."],
-key:["D = E / R; FI, II, IF, FF.","Camino crítico: el más largo; holgura mínima.","CPM determinista vs PERT probabilístico.","EDT: orientada a entregables y no a plan de ejecución; el PGP lo elabora el gestor."],
-q:"Un proyecto necesita 40 días-persona de esfuerzo y asignas 4 recursos. ¿Qué duración resulta?",a:"D = E / R = 40 / 4 = 10 días (siempre que la duración dependa de los recursos asignados)."},
-{n:5,t:"Ejecución, control y cierre del proyecto",
-sum:[
-"<b>Éxito</b>: los stakeholders acuerdan antes los criterios de aceptación y éxito. Variables favorables: relación con la organización (alineado, apoyo de la dirección), equipo (liderazgo, comunicación, proactividad), expectativas, recursos y planificación/gestión de imprevistos.",
-"<b>Kanban</b>: «tarjetas visuales» (Toyota, años 40, just in time). Principios Lean: calidad garantizada, reducción del desperdicio, mejora continua y flexibilidad. Tablero básico: por hacer, en curso, hecho. Frente a Scrum (sprints fijos), Kanban es flujo continuo.",
-"<b>Comunicaciones</b>: el PMI aconseja ~90 % del tiempo del director. Tres retos: decir lo que se quiere decir, que el receptor quiera recibirlo y el filtro de su marco de creencias. Logos, Ethos, Pathos; las «5 C» (cortés, constante, conciso, claro, convincente); AIDA. Informes con código de colores (rojo, verde, ámbar), regulares y adaptados a la audiencia.",
-"<b>Expectativas y reuniones</b>: gestionar sobre líneas de base, no dar nada por sentado. Reuniones: orden del día previo, objetivos no ambiciosos, estar «todos los que tienen que estar», acta con responsables y tareas. Las reuniones inaugurales alinean expectativas y crean sentido de equipo.",
-"<b>Subcontratación</b>: proceso de evaluación y selección, contrato, condiciones de relación y comunicación, condiciones de entrega. «No asuma nada», relación win-win, pago vinculado a aceptación de entregables, contratos por fase. Comparativa de contratos <b>T&amp;M</b> (tiempo y materiales) vs <b>Precio Garantizado</b>. Contrato legal: firma de representante legal, consideraciones mutuas, voluntariedad e intencionalidad legal.",
-"<b>Calidad</b>: ISO 9000:2015: grado en que un conjunto de características inherentes cumple los requisitos. En proyectos es una <b>decisión y un objetivo</b>, no perfección. Gestión de calidad = planificación, aseguramiento, control y mejora, recogida en el <b>Plan de Calidad</b> definido al inicio.",
-"<b>Riesgos</b>: eventos con efecto positivo o negativo; tipos: gestión, recursos, requerimientos, tecnología, entorno, aceptación. <b>Riesgo = probabilidad × impacto</b> (prioridad A muy alta a E muy baja). Respuestas: <b>transferir, reducir, evitar, retener, compartir</b>; plan de contingencia; revisión periódica.",
-"<b>Cambios</b>: variación de alcance, calendario, costes, calidad o criterios de aceptación; ~80 % proceden del alcance. Reconocer, evaluar impacto, comunicar y ajustar la planificación. Prevención: requisitos sólidos, cierres de aceptación formales, EDT detallada, pruebas piloto, controlar gold plating y cambios pequeños.",
-"<b>Control</b>: principios de prevención, detección y acción (correctivas, control de cambios, lecciones aprendidas). Línea base, paquetes de trabajo pequeños, hitos de control, «regla del 15 %» (800 proyectos del Dpto. de Defensa de EE. UU.), criterio de finalización claro (evitar «está al 90 %»), <b>umbrales de escalada</b> (ej. sobrecoste &gt; 10 % involucra a la dirección).",
-"<b>Valor Ganado (EVM)</b>: método objetivo del PMBOK (estándar publicado por el PMI en 2005) que integra alcance, cronograma y coste. Variables: PV (valor planificado), EV (valor ganado), AC (coste real), BAC (presupuesto total).",
-"<b>Cierre</b>: puede ser por completarse, cancelación, colapso, etc. (p. ej. «muerte lenta» por deterioro). Premisas: cumplir obligaciones contractuales, entregar y traspasar, aceptación del cliente, trámites administrativos; y además lecciones aprendidas, archivo de documentos y evaluación del equipo."],
-tabla:"<div class='tw'><table><tr><th>Indicador</th><th>Fórmula</th><th>Lectura</th></tr><tr><td>CV (variación coste)</td><td>EV − AC</td><td>+ bajo presupuesto</td></tr><tr><td>CPI</td><td>EV / AC</td><td>&gt;1 bien; =1 según plan; &lt;1 mal</td></tr><tr><td>SV (variación cronograma)</td><td>EV − PV</td><td>+ adelantado</td></tr><tr><td>SPI</td><td>EV / PV</td><td>&gt;1 adelanto; =1 según plan; &lt;1 retraso</td></tr><tr><td>EAC</td><td>AC + (BAC − EV) &nbsp;|&nbsp; BAC / CPI &nbsp;|&nbsp; AC + (BAC − EV)/(CPI×SPI) &nbsp;|&nbsp; AC + nueva estimación</td><td>Coste final estimado</td></tr><tr><td>TCPI</td><td>(BAC − EV)/(BAC − AC) &nbsp;o&nbsp; (BAC − EV)/(EAC − AC)</td><td>&gt;1 malo; &lt;1 hay holgura</td></tr></table></div>",
-key:["Riesgo = probabilidad × impacto; 5 respuestas: transferir, reducir, evitar, retener, compartir.","~80 % de los cambios vienen del alcance.","CPI = EV/AC; SPI = EV/PV; CV = EV − AC; SV = EV − PV.","Calidad: planificación, aseguramiento, control y mejora."],
-q:"En el mes 3 un proyecto tiene EV = 20 000 y AC = 25 000. ¿Qué indica el CPI?",a:"CPI = EV / AC = 20 000 / 25 000 = 0,8 &lt; 1: el proyecto va mal en costes (por encima del presupuesto)."},
-{n:6,t:"El liderazgo en proyectos tecnológicos",
-sum:[
-"<b>Estructuras</b>: <b>funcional</b> (la más tradicional; responsabilidad diluida), <b>equipos de proyecto</b> (origen reciente, control directo y coordinación óptima, pero más costosa) y <b>matriz</b> (Cleland y King, 1968; mezcla ventajas e inconvenientes; el director no tiene autoridad directa sobre los técnicos y debe apoyarse en su liderazgo).",
-"<b>Reparto en matriz</b>: el director de proyecto decide qué, cuándo y cuánto cuesta; el director funcional decide cómo (calidad técnica) y quién (personal). Elección: muchos proyectos pequeños y poca tecnología → funcional; proyecto grande y largo → equipos de proyecto; tecnología y tamaño medio → matriz.",
-"<b>Director de proyectos tecnológicos</b>: integra la vertiente técnica y la de liderazgo. Funciones: <b>planificación, organización, coordinación, control y motivación</b>. A mayor inversión o complejidad, disminuyen las tareas técnicas y aumentan las de gestión.",
-"<b>5 tipologías (Booz, Allen &amp; Hamilton)</b> con autoridad creciente: 1 centralizador de información, 2 activador de proyecto, 3 coordinador, 4 jefe de proyecto (típico en matriz), 5 director de proyecto (mando pleno). Solo dos tienen autoridad real para ser directores.",
-"<b>Autoridad</b>: formal (legal) e informal (liderazgo y carisma), siendo la informal más importante. <b>Capacidades</b>: técnicas de gestión, tecnológica, gestión empresarial, comunicación y <b>liderazgo</b> (la más difícil, integra a las demás).",
-"<b>Errores comunes</b> (Horine, 15): no entender los objetivos, no gestionar expectativas, calendarios poco realistas, no usar control de cambios, mala comunicación, no gestionar riesgos de forma proactiva, falta de liderazgo, etc. <b>Claves</b>: empatía, ganar confianza y respeto, gestionar el capital humano, visión global, proactividad, asumir responsabilidad y autocontrol.",
-"<b>Rendimiento del equipo</b>: metas claras, compromiso, buen clima y profesionalidad. Estrategias: gestionar el tiempo personal (matriz urgente/importante de Covey: centrarse en lo importante no urgente), <b>delegación en encargados</b> (resultados, directrices, recursos, rendición de cuentas, consecuencias) vs recaderos, reclutar los perfiles adecuados (>80 % del éxito), <b>motivar</b> (reconocer públicamente, expectativas claras, recursos, resolver conflictos) y <b>dinamizar</b> (reuniones al inicio de fase, rituales, planificar en equipo, paquete de introducción).",
-"<b>Ética</b>: hacer lo correcto con el proceso correcto, sin atajos. Integridad y responsabilidad profesional; cumplir leyes y políticas; no priorizar el proyecto sobre la sociedad. Cuatro valores del Código del PMI: <b>responsabilidad, respeto, imparcialidad y honestidad</b>; los 12 principios y el Código son complementarios."],
-key:["Matriz: el director de proyecto no tiene autoridad directa sobre los técnicos.","5 tipologías: autoridad crece del tipo 1 al 5.","Autoridad informal (liderazgo) más importante que la formal.","Valores PMI: responsabilidad, respeto, imparcialidad, honestidad."],
-q:"En una organización matricial, ¿quién decide «quién lo hace» y quién «cuándo se hace»?",a:"«Quién lo hace» (asignación de personal) y «cómo» lo decide el director de la unidad funcional; «qué», «cuándo» y «cuánto cuesta» corresponden al director de proyecto."}
+const M=(t,q,o,r,e)=>({t,q,o,r,e}),V=(t,q,r,e)=>({t,q,o:["Verdadero","Falso"],r:r?0:1,e,vf:1});
+const TN=["","T1 Introducción","T2 Metodologías y estándares","T3 Diseño del proyecto","T4 Planificación","T5 Ejecución, control y cierre","T6 Liderazgo"];
+const Q=[
+M(1,"Según el Tema 1, ¿cuál NO es una circunstancia en la que se considera concluido un proyecto?",["Se alcanzaron los objetivos y no queda nada por hacer","El equipo o los interesados ven que los objetivos no se pueden alcanzar","El producto o servicio ya no es necesario","El resultado desaparece porque el proyecto es temporal"],3,"El proyecto es temporal pero su resultado NO tiene por qué serlo (ej. las pirámides)."),
+V(1,"El resultado de un proyecto tiene que ser temporal, igual que el proyecto.",false,"El resultado no tiene por qué ser temporal (ej. las pirámides)."),
+M(1,"¿Cuál es el elemento de más valor en un proyecto tecnológico?",["La tecnología","El elemento humano","El presupuesto","La metodología"],1,"La capacidad de creación y diseño de los ingenieros es el mayor activo del equipo."),
+V(1,"La presencia de elementos repetitivos cambia la condición de «único» del proyecto.",false,"Aunque haya elementos repetitivos, cliente, entorno y características varían: siempre es único."),
+M(1,"El indicador que relaciona los resultados obtenidos con los objetivos iniciales es:",["Idoneidad","Eficiencia","Eficacia","Calidad"],2,"Eficacia = resultados vs objetivos; eficiencia = medios vs resultados; idoneidad = adaptación a la realidad."),
+V(1,"Cada lado del triángulo de la dirección de proyectos puede cambiarse sin alterar los otros dos.",false,"Cada lado es una restricción que no puede cambiarse sin alterar los otros dos."),
+M(1,"El problema de los errores en software se origina a mediados de los 60 por, entre otras causas:",["Ordenadores de segunda generación","Ordenadores de tercera generación con circuitos integrados","La aparición de internet","Los lenguajes orientados a objetos"],1,"Ordenadores de 3.ª generación (microchips), nuevas técnicas y nuevos ámbitos de aplicación."),
+V(1,"El principio KISS fue puesto en práctica por Kelly Johnson, ingeniero de Lockheed.",true,"Retó a sus ingenieros a que el avión fuera reparable en combate con herramientas básicas."),
+M(1,"¿En qué año se desarrolla el CPM (Critical Path Method) según la cronología del tema?",["1910","1957","1969","1986"],1,"1957 CPM (DuPont/Remington Rand); 1958 PERT; 1969 PMI; 1986 Scrum."),
+V(1,"Según Brooks, añadir más recursos a un proyecto retrasado hace que se retrase más.",true,"Es el «mito del mes-hombre» (The Mythical Man-Month, 1975)."),
+M(1,"¿Qué nivel de la operativa de proyectos se caracteriza por «plazo medio, metas parciales y órganos directivos»?",["Planificación estratégica","Dirección (gestión) de proyectos","Control de calidad","Operaciones"],1,"Planificación estratégica = horizonte lejano; control de calidad = futuro inmediato."),
+V(1,"La fase de terminación incluye formalizar la aceptación final y organizar la salida ordenada del equipo.",true,"También transmitir el conocimiento a los usuarios y cerrar la cuenta del proyecto."),
+M(2,"Un estándar define:",["Qué hay que hacer","Cómo hay que hacerlo","Quién lo hace","Cuándo se hace"],1,"La metodología define qué; el estándar define cómo y suele ser parte de ella."),
+V(2,"Existe una metodología única válida para cualquier tipo de proyecto.",false,"Las diferencias de ciclo de vida, sector, producto, tamaño y tecnología lo impiden: se adapta (pick-and-choose)."),
+M(2,"Las metodologías pesadas pueden ser apropiadas cuando:",["Los requisitos cambian constantemente","El equipo es muy pequeño","Hay equipos de más de 10–20 personas en varias ubicaciones","Se quiere eliminar la documentación"],2,"Proyectos complejos que requieren control estricto y coordinación entre equipos."),
+V(2,"Las metodologías ágiles se orientan más a los documentos que a las personas.",false,"Son menos orientadas al documento y más a las personas y al cambio."),
+M(2,"¿Qué edición del PMBOK se convirtió en estándar ANSI?",["La 1.ª (1996)","La 2.ª (2000)","La 5.ª (2013)","La 7.ª (2021)"],1,"Es el único estándar ANSI en gestión de proyectos; también IEEE Std 1490-2003."),
+V(2,"El PMBOK es una norma que debe seguirse al pie de la letra.",false,"Es un compendio de buenas prácticas; el equipo decide lo apropiado para cada proyecto."),
+M(2,"¿Qué área de conocimiento se añadió en la 5.ª edición respecto a la 4.ª?",["Riesgos","Adquisiciones","Interesados","Calidad"],2,"Pasó a 47 procesos, 5 grupos y 10 áreas con «Interesados»."),
+V(2,"Gestionar el conocimiento, implementar respuestas a riesgos y controlar recursos son procesos nuevos de la 6.ª edición.",true,"Además, tiempo→calendario y RR. HH.→recursos."),
+M(2,"¿Cuántos principios de la dirección de proyectos define el PMBOK 7?",["5","8","10","12"],3,"12 principios; los 8 son los dominios de desempeño."),
+V(2,"Los 8 dominios de desempeño se ejecutan simultáneamente a lo largo de todo el proyecto.",true,"Son interdependientes y se abordan desde el inicio hasta el cierre."),
+M(2,"¿Cuál de estos NO es un dominio de desempeño del PMBOK 7?",["Incertidumbre","Métricas","Integración","Entrega"],2,"Integración es un área de conocimiento de la 6.ª edición."),
+V(2,"El cliente es quien usa los resultados a nivel operativo y el usuario quien aporta la financiación.",false,"Es al revés: cliente = financia; usuario = usa los resultados."),
+M(2,"Un sprint de Scrum es un bloque de tiempo (time-box) de:",["1–2 días","2–4 semanas","3–6 meses","Un año"],1,"Produce un incremento «terminado», utilizable y potencialmente desplegable."),
+V(2,"La reunión diaria (daily) de Scrum dura como máximo 15 minutos.",true,"Sirve para obtener realimentación de tareas y obstáculos."),
+M(2,"¿Qué rol de Scrum alimenta y revisa las actividades para que el desarrollo sea como el cliente quiere?",["Product Owner","Scrum Master","Scrum Team","Stakeholder"],0,"El Scrum Master lidera el grupo; el Scrum Team desarrolla."),
+V(2,"Scrum surge de un artículo de 1986 de Takeuchi y Nonaka, formalizado en 1995 por Schwaber y Sutherland.",true,"«The New Product Development Game», Harvard Business Review."),
+M(2,"¿Cuál es un inconveniente de Scrum?",["Es difícil de aprender","Las tareas mal definidas pueden incrementar costes y plazos","No admite requisitos cambiantes","No genera retroalimentación"],1,"También exige equipos comprometidos y experimentados."),
+V(2,"El PMBOK 7 evoluciona de un enfoque predictivo hacia uno adaptativo, basado en principios.",true,"Centrado en resultados previstos más que en entregables y en la entrega de valor."),
+M(2,"La distribución temporal de los 5 grupos de procesos del PMBOK es:",["Estrictamente secuencial","Con solapes e interacciones","Aleatoria","Solo al inicio del proyecto"],1,"No es secuencial: los grupos se solapan en el tiempo."),
+V(2,"Un modelo de ciclo de vida puede incluir bucles de realimentación en que una fase se ejecuta más de una vez.",true,"Da lugar a cascada, espiral, entrega evolutiva o prototipado incremental."),
+M(3,"Las dos subfases de la preparación de un proyecto son:",["Diseño y planificación","Ejecución y control","Inicio y cierre","Oferta y contrato"],0,"Diseño = definir el problema; planificación = definir el plan de desarrollo."),
+V(3,"El origen de un proyecto está siempre dentro del ámbito de control del proyecto.",false,"Siempre está fuera de su ámbito; la organización decide si se desarrolla."),
+M(3,"La fase contractual aparece cuando el proyecto:",["Se desarrolla in house","Se subcontrata","Siempre, sin excepción","Nunca"],1,"Se solicitan ofertas, se valoran y se elige la mejor."),
+V(3,"La definición del problema ocupa mucho tiempo, por lo que se le da su importancia central.",false,"Ocupa poco tiempo y por eso muchas veces no se le da la importancia que tiene."),
+M(3,"«Soluciones en busca de un problema» ocurre cuando:",["Alguien ve una aplicación en marcha y quiere algo similar","Se define el problema con usuarios","Se hace un estudio de viabilidad","El comité alinea con el plan estratégico"],0,"Hay que sacar a flote el problema u oportunidad y definirlo claramente."),
+V(3,"Los fines deben cumplir la regla SMART y se sugiere no enumerar más de 6.",true,"Specific, Measurable, Achievable, Realistic, Time-bound."),
+M(3,"En la regla SMART, la «T» significa:",["Technical","Time-bound","Tangible","Team"],1,"Temporales: con principio y fin."),
+V(3,"El gold plating figura como término estándar en el PMBOK.",false,"No figura en el PMBOK, aunque el concepto es generalmente aceptado."),
+M(3,"Una causa habitual del scope creeping es:",["Pobre control de cambios","Requisitos iniciales rigurosos","Jefe de proyecto fuerte","Alcance bien documentado"],0,"También la ambigüedad y la carencia de requisitos rigurosos."),
+V(3,"En la definición de requisitos de diseño conviene dedicar el menor tiempo posible.",false,"Un principio básico: nunca se dedica demasiado tiempo a definir requisitos."),
+M(3,"Los tres cimientos que se concretan en la planificación son:",["Alcance, coste y duración","Calidad, riesgo y RR. HH.","Objetivos, fines y ámbito","Tiempo, equipo y contrato"],0,"Alcance (especificaciones), coste (presupuesto), duración (calendario)."),
+V(3,"La aprobación del PGP marca el fin de la fase de diseño y el comienzo del desarrollo.",true,"El PGP es la salida de la planificación."),
+M(3,"¿Cuál NO es una de las 9 tareas de organización y planificación?",["Plan de transferencia","Plan de calidad","Cierre de cuentas del proyecto","Formación del equipo"],2,"El cierre de cuentas pertenece a la terminación."),
+V(3,"La reunión de kick-off aprueba los objetivos y el alcance recogidos en el PGP.",true,"Oficializa la apertura de la fase de desarrollo."),
+M(3,"¿Quién organiza y dirige la reunión de kick-off?",["El gestor del proyecto","El cliente","El comité de dirección","Un consultor externo"],0,"Prepara la presentación, la logística y el acta post-reunión."),
+V(3,"Cada riesgo identificado en la organización del proyecto debe llevar asociada una acción preventiva.",true,"Se inventarían en una matriz y se monitorizan periódicamente."),
+M(4,"Una tarea requiere 30 días-persona de esfuerzo y se asignan 3 recursos. Su duración (D = E/R) es:",["90 días","10 días","33 días","27 días"],1,"D = 30 / 3 = 10."),
+V(4,"En una dependencia Fin-Inicio, el inicio de la actividad dependiente está ligado a la finalización de la precedente.",true,"Existen FI, II, IF y FF."),
+M(4,"Un retardo negativo en una relación FI significa que la dependiente:",["Puede iniciarse antes de que finalice la precedente","Debe esperar más","No puede iniciarse","Se cancela"],0,"Un retardo positivo la obliga a iniciar un tiempo después."),
+V(4,"Duración y tiempo de calendario son lo mismo.",false,"El calendario considera turnos, festivos y vacaciones."),
+M(4,"La Ley de Parkinson establece que:",["El trabajo se expande hasta llenar el tiempo disponible","Nueve mujeres no tienen un bebé en un mes","Todo lo que puede salir mal saldrá mal","Más recursos siempre acortan el plazo"],0,"La frase de los nueve meses es de Brooks."),
+V(4,"Un conflicto de recurso surge al asignar a un recurso más actividades de las que puede realizar con sus horas.",true,"Otros: conflictos de programación y de plazos con terceros."),
+M(4,"El análisis «táctico» para redefinir un proyecto que no llega a la fecha consiste en:",["Modificar la red de actividades","Cambiar los tiempos aplicando recursos adicionales","Eliminar entregables","Cancelar el proyecto"],1,"El análisis estratégico modifica la red."),
+V(4,"Los procedimientos de administración y control los establece el gestor y los aprueba el Comité de Dirección.",true,"Quedan reflejados en el PGP."),
+M(4,"¿Qué documento se describe como «la Biblia del proyecto»?",["La EDT","El Plan de Gestión del Proyecto","El diagrama de Gantt","El acta de reunión"],1,"Recoge todo lo necesario para el seguimiento y control."),
+V(4,"La EDT documenta el plan de ejecución del proyecto.",false,"Documenta el alcance (entregables), no el plan de ejecución."),
+M(4,"Para una EDT se sugiere:",["1–2 niveles y 20 elementos por nivel","3–4 niveles y 5–9 elementos por nivel","10 niveles","Sin límite alguno"],1,"Máx. 100–200 elementos terminales; si hay más, subproyectos."),
+V(4,"Un hito es una actividad de duración cero.",true,"Se representa con un rombo o triángulo."),
+M(4,"En un DAN (Diagrama de Actividad en Nodos):",["Las actividades se representan en flechas","Las actividades se representan en los nodos","Las actividades son barras","Se usan solo desfases"],1,"En el DAL las actividades van sobre las flechas."),
+V(4,"El diagrama de Gantt muestra explícitamente las dependencias entre tareas.",false,"No las indica explícitamente, aunque la posición en el tiempo permite deducirlas."),
+M(4,"El camino crítico es:",["El más corto de la red","El que hace más larga la duración del proyecto","El de mayor coste","El de más recursos"],1,"Tiene holgura mínima; un retraso en él retrasa el proyecto."),
+V(4,"En PERT las estimaciones de duración son probabilísticas y en CPM deterministas.",true,"PERT calcula la probabilidad de acabar en plazo."),
+M(4,"La holgura total de una actividad se calcula como:",["FFT − Fft","Fct + dE","FFT − dE","Fft − Fct"],0,"También H = FCT − Fct."),
+V(4,"El método CPM, por defecto, asume que los recursos son limitados.",false,"Asume recursos ilimitados; hay que afinarlo."),
+M(4,"¿Quién desarrolló los diagramas de barras para programar actividades?",["Kelley","Henry Gantt","Walker","Taylor"],1,"Hacia 1900 (en el tema se sitúa su origen a principios del siglo XX)."),
+V(4,"Los diagramas de red se desarrollaron en EE. UU. para proyectos de Defensa en los años 50.",true,"Consideran el proyecto como nodos y arcos."),
+M(5,"Los principios fundamentales del control de proyectos son:",["Prevención, detección y acción","Planificar, hacer y verificar","Iniciar, ejecutar y cerrar","Alcance, tiempo y coste"],0,"Acción: correctivas, control de cambios y lecciones aprendidas."),
+V(5,"Aproximadamente el 80 % de los cambios proceden de cambios en el alcance.",true,"Por declaraciones ambiguas, requisitos mal definidos, tecnología, etc."),
+M(5,"Contratar un seguro como respuesta a un riesgo corresponde a:",["Evitar","Transferir","Retener","Reducir"],1,"Otras respuestas: reducir, evitar, retener y compartir."),
+V(5,"El riesgo se entiende como la probabilidad de que el evento ocurra multiplicada por su impacto.",true,"Permite establecer prioridad (A muy alta … E muy baja)."),
+M(5,"El tablero básico de Kanban tiene las columnas:",["Por hacer, en curso, hecho","Inicio, medio, fin","Plan, ejecución, cierre","Backlog, sprint, review"],0,"Kanban = «tarjetas visuales»; Scrum usa sprints fijos."),
+V(5,"Kanban se origina en Toyota en los años 40 con el just in time.",true,"Aplica principios Lean: calidad, reducción del desperdicio, mejora continua, flexibilidad."),
+M(5,"El PMI aconseja que el director dedique a comunicación aproximadamente:",["10 %","30 %","50 %","90 %"],3,"La comunicación es competencia fundamental junto con el liderazgo."),
+V(5,"Las «5 C» de la comunicación son: Cortés, Constante, Conciso, Claro y Convincente.",true,"Convincente = pathos."),
+M(5,"Un CPI menor que 1 indica que el proyecto:",["Está por debajo del presupuesto","Está por encima del presupuesto (va mal)","Va adelantado","Va según lo planificado"],1,"CPI = EV / AC."),
+V(5,"Un SPI menor que 1 indica que el proyecto va retrasado.",true,"SPI = EV / PV."),
+M(5,"La fórmula EV − AC corresponde a:",["CV (variación del costo)","SV","EAC","TCPI"],0,"SV = EV − PV."),
+V(5,"Un TCPI mayor que 1 es bueno porque indica holgura para gastar.",false,"TCPI > 1 es malo; < 1 es bueno."),
+M(5,"En una subcontratación, el pago debe vincularse a:",["Las horas trabajadas","La firma del contrato","La aceptación y aprobación de los entregables","El calendario"],2,"También: relación win-win y contratos por fase."),
+V(5,"Es aconsejable contratar solo por una fase del proyecto, prorrogable según el resultado.",true,"Además, el trabajo debe quedar definido en la EDT."),
+M(5,"En proyectos tecnológicos la calidad conviene verla como:",["Perfección","Excelencia ilimitada","Una decisión y un objetivo","Un fin en sí mismo"],2,"Es un compromiso y un marco de entendimiento (ISO 9000:2015)."),
+V(5,"La «regla del 15 %» observó que el resultado de un proyecto no superaba nunca el rendimiento medido al 15 % del desarrollo.",true,"Estudio de 800 proyectos del Dpto. de Defensa de EE. UU. desde 1977."),
+M(5,"Los «umbrales de escalada» sirven para:",["Definir qué variaciones gestiona el equipo y cuáles la dirección","Aumentar el alcance","Cerrar el proyecto","Elegir el contrato"],0,"Ej.: si el sobrecoste pasa del 10 % se involucra a la dirección."),
+V(5,"El Earned Value Management es la metodología de control propuesta por el PMI en el PMBOK.",true,"Integra alcance, cronograma y coste."),
+M(5,"¿Qué medida ayuda a prevenir cambios de alcance?",["Cierres de aceptación formales","Ampliar el alcance sin control","Evitar documentar","Suprimir pruebas piloto"],0,"También requisitos sólidos y EDT detallada."),
+V(5,"Evaluar las lecciones aprendidas es un paso secundario pero importante en el cierre.",true,"Junto a archivar documentos y evaluar al equipo."),
+M(6,"La organización matricial fue desarrollada por:",["Taylor","Cleland y King (1968)","Covey","Horine"],1,"Obra: Systems Analysis and Project Management."),
+V(6,"En la organización matricial el director de proyecto tiene autoridad directa sobre los técnicos asignados.",false,"No la tiene: debe apoyarse en su liderazgo y carisma."),
+M(6,"Para un gran proyecto de larga duración la estructura más apropiada es:",["Funcional","Equipos de proyecto","Matricial","Ninguna"],1,"Funcional: muchos proyectos pequeños; matriz: tecnología y tamaño medio."),
+V(6,"Las funciones del director son planificación, organización, coordinación, control y motivación.",true,"Planificación = decisiones; las demás = ejecutivas."),
+M(6,"La tipología 1, «centralizador de información», se caracteriza por:",["Tener plena autoridad","Ser el secretario del director técnico, sin autoridad propia","Dirigir un equipo independiente","Fijar presupuestos"],1,"La autoridad aumenta del tipo 1 al 5."),
+V(6,"De las cinco tipologías de director, solo dos tienen autoridad para ser auténticos directores de proyecto.",true,"Los tipos 4 (jefe de proyecto) y 5 (director de proyecto)."),
+M(6,"La capacidad más difícil del director, que integra todas las demás, es:",["Técnica de gestión","Tecnológica","Comunicación","Liderazgo"],3,"Motivar a la organización superando incertidumbres."),
+V(6,"La autoridad formal es más importante que la informal.",false,"La informal (liderazgo y carisma) es más importante."),
+M(6,"En la delegación de Covey, delegar en «encargados» se centra en:",["Los métodos","Los resultados","El horario","El control diario"],1,"Los «recaderos» siguen instrucciones: «haga esto y avíseme»."),
+V(6,"Contar con las personas adecuadas puede suponer más del 80 % del éxito del proyecto.",true,"Hay que identificar los perfiles necesarios y participar en la selección."),
+M(6,"Según la matriz del tiempo de Covey, el objetivo es centrarse en actividades:",["Urgentes e importantes","No urgentes e importantes","Urgentes y no importantes","No urgentes y no importantes"],1,"Evita las crisis y el cuadrante de «administradores de crisis»."),
+V(6,"Los cuatro valores del Código de Ética del PMI son responsabilidad, respeto, imparcialidad y honestidad.",true,"Los 12 principios y el Código son complementarios.")
 ];
-const nav=document.getElementById("nav"),map=document.getElementById("map"),box=document.getElementById("temas");
-nav.innerHTML='<a href="#mapa">Mapa</a>'+T.map(x=>`<a href="#tema${x.n}">Tema ${x.n}</a>`).join("");
-map.innerHTML=T.map(x=>`<a href="#tema${x.n}"><b>Tema ${x.n}</b><br>${x.t}</a>`).join("");
-box.innerHTML=T.map(x=>`<section id="tema${x.n}"><h2>Tema ${x.n}. ${x.t}</h2><p class="sub">Resumen ejecutivo</p><ul>${x.sum.map(s=>`<li>${s}</li>`).join("")}</ul>${x.tabla||""}<div class="key"><h3>⚠️ Lo que no puedes olvidar</h3><ul>${x.key.map(k=>`<li>${k}</li>`).join("")}</ul></div><details><summary>🧠 Mini-reto: ${x.q}</summary><p>${x.a}</p></details></section>`).join("");
+const $=s=>document.querySelector(s),app=$("#app"),L="ABCD";
+let N=1,pos=0,A=[],G=[],done=false;
+function score(){return G.filter((g,i)=>g&&A[i]===Q[i].r).length}
+function answered(){return G.filter(Boolean).length}
+function head(){$("#sc").textContent=`Marcador: ${score()} / ${answered()} · ${answered()}/100`;$("#pg").style.width=answered()+"%"}
+function start(){app.innerHTML=`<div class="card"><h2>Examen interactivo · 100 preguntas</h2><p>Metodología de Diseño y Gestión de Proyectos (Temas 1–6). Opción múltiple y Verdadero/Falso, con retroalimentación inmediata y reporte final. Elige cómo responder:</p><div class="row"><button class="btn mode" onclick="go(1)">De 1 en 1</button><button class="btn mode" onclick="go(5)">Bloques de 5</button><button class="btn mode" onclick="go(10)">Bloques de 10</button></div><p style="color:var(--mu);font-size:.85rem">Distribución: T1 12 · T2 20 · T3 16 · T4 20 · T5 20 · T6 12. Puedes terminar antes con «Finalizar examen».</p></div>`;head()}
+function go(n){N=n;pos=0;A=[];G=[];done=false;show()}
+function show(){head();const end=Math.min(pos+N,100);let h="";
+for(let i=pos;i<end;i++){const q=Q[i],g=G[i];h+=`<div class="card"><span class="tag">Pregunta ${i+1}/100</span><span class="tag">${TN[q.t]}</span><span class="tag">${q.vf?"Verdadero / Falso":"Opción múltiple"}</span><div class="q">${q.q}</div>`;
+q.o.forEach((o,k)=>{let c="opt";if(g){if(k===q.r)c+=" good";else if(k===A[i])c+=" bad"}else if(A[i]===k)c+=" sel";h+=`<button class="${c}" ${g?"disabled":""} onclick="pick(${i},${k})">${q.vf?"":L[k]+". "}${o}</button>`});
+if(g){const ok=A[i]===q.r;h+=`<div class="fb ${ok?"good":"bad"}"><b>${ok?"✅ ¡Correcto!":"❌ Incorrecto."}</b> Respuesta correcta: <b>${q.vf?q.o[q.r]:L[q.r]+". "+q.o[q.r]}</b><br>${q.e}</div>`}h+="</div>"}
+const all=[...Array(end-pos)].every((_,k)=>A[pos+k]!==undefined),graded=G[pos];
+h+=`<div class="row">${graded?(end<100?`<button class="btn" onclick="nxt()">Siguiente ▶</button>`:`<button class="btn" onclick="fin()">Ver reporte final 🏁</button>`):`<button class="btn" ${all?"":"disabled"} onclick="grade()">${N==1?"Responder":"Calificar bloque"}</button>`}<button class="btn red sec" onclick="if(confirm('¿Finalizar el examen ahora?'))fin()">FINALIZAR EXAMEN</button></div>`;
+app.innerHTML=h;window.scrollTo(0,0)}
+function pick(i,k){if(G[i])return;A[i]=k;show()}
+function grade(){for(let i=pos;i<Math.min(pos+N,100);i++)G[i]=1;show()}
+function nxt(){pos+=N;show()}
+function fin(){head();const n=answered(),s=score(),pc=n?(s/n*100):0,t={};
+Q.forEach((q,i)=>{if(!G[i])return;t[q.t]=t[q.t]||[0,0];t[q.t][1]++;if(A[i]===q.r)t[q.t][0]++});
+let h=`<div class="card"><h2>🏁 Reporte final</h2><div class="big">${s}/${n}</div><p>Porcentaje de acierto: <b>${pc.toFixed(1)} %</b> · Escala sobre 10: <b>${(pc/10).toFixed(1)}</b>${n<100?` · <i>Examen finalizado con ${n} de 100 preguntas respondidas.</i>`:""}</p></div><div class="card"><h3>Diagnóstico por tema</h3>`;
+for(const k in t){const p=t[k][0]/t[k][1]*100;h+=`<div>${TN[k]}: <b>${t[k][0]}/${t[k][1]}</b> (${p.toFixed(0)} %) — ${p>=80?"Dominado 💪":p>=60?"Repasar detalles":"Repasar el tema completo"}</div><div class="pb"><i style="width:${p}%"></i></div>`}
+h+=`</div><div class="card"><h3>Resumen consolidado (hoja de repaso)</h3><div class="tw"><table><tr><th>#</th><th>Pregunta</th><th>Tu respuesta</th><th>Correcta</th><th>Justificación</th></tr>`;
+Q.forEach((q,i)=>{if(!G[i])return;const f=k=>q.vf?q.o[k]:L[k]+". "+q.o[k],ok=A[i]===q.r;h+=`<tr><td>${i+1}</td><td>${q.q}</td><td>${ok?"✅":"❌"} ${f(A[i])}</td><td>${f(q.r)}</td><td>${q.e}</td></tr>`});
+h+=`</table></div><div class="row"><button class="btn" onclick="start()">Reiniciar examen</button></div></div>`;app.innerHTML=h;window.scrollTo(0,0)}
+start();
 </script></body></html>
